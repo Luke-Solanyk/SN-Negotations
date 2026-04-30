@@ -115,6 +115,18 @@
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Fleet Card Styling */
+        .fleet-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fleet-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            border-color: var(--brand-accent);
+        }
     </style>
 </head>
 <body class="bg-white text-slate-900 font-light min-h-screen flex flex-col">
@@ -130,10 +142,11 @@
                     </button>
                 </div>
                 
-                <div id="nav-widgets" class="hidden md:flex items-center space-x-6 lg:space-x-10">
+                <div id="nav-widgets" class="hidden md:flex items-center space-x-4 lg:space-x-8">
                     <button onclick="navigateTo('home')" class="nav-link text-[10px] lg:text-xs font-semibold uppercase tracking-widest text-slate-600">Home</button>
                     <button onclick="navigateTo('about')" class="nav-link text-[10px] lg:text-xs font-semibold uppercase tracking-widest text-slate-600">About Us</button>
                     <button onclick="navigateTo('how-it-works')" class="nav-link text-[10px] lg:text-xs font-semibold uppercase tracking-widest text-slate-600">The Process</button>
+                    <button onclick="navigateTo('fleet')" class="nav-link text-[10px] lg:text-xs font-semibold uppercase tracking-widest text-slate-600">Fleet Management</button>
                     <button onclick="navigateTo('benefits')" class="nav-link text-[10px] lg:text-xs font-semibold uppercase tracking-widest text-slate-600">The Advantage</button>
                     <button onclick="navigateTo('pricing')" class="nav-link text-[10px] lg:text-xs font-semibold uppercase tracking-widest text-slate-600">The Fee</button>
                     <button onclick="navigateTo('contact')" class="nav-link text-[10px] lg:text-xs font-semibold uppercase tracking-widest text-slate-600">Contact</button>
@@ -158,10 +171,11 @@
                 <i class="fas fa-times text-3xl"></i>
             </button>
         </div>
-        <div class="flex flex-col items-center justify-center space-y-8 flex-grow text-white">
+        <div class="flex flex-col items-center justify-center space-y-6 flex-grow text-white">
             <button onclick="navigateTo('home'); toggleMobileMenu();" class="text-xl font-bold uppercase tracking-widest">Home</button>
             <button onclick="navigateTo('about'); toggleMobileMenu();" class="text-xl font-bold uppercase tracking-widest">About Us</button>
             <button onclick="navigateTo('how-it-works'); toggleMobileMenu();" class="text-xl font-bold uppercase tracking-widest">The Process</button>
+            <button onclick="navigateTo('fleet'); toggleMobileMenu();" class="text-xl font-bold uppercase tracking-widest">Fleet Management</button>
             <button onclick="navigateTo('benefits'); toggleMobileMenu();" class="text-xl font-bold uppercase tracking-widest">The Advantage</button>
             <button onclick="navigateTo('pricing'); toggleMobileMenu();" class="text-xl font-bold uppercase tracking-widest">The Fee</button>
             <button onclick="navigateTo('contact'); toggleMobileMenu();" class="text-xl font-bold uppercase tracking-widest">Contact</button>
@@ -172,7 +186,7 @@
     </div>
 
     <main class="flex-grow">
-        <!-- HOME PAGE -->
+        <!-- HOME PAGE (Titles left as is per instructions) -->
         <div id="home" class="page-content active">
             <header id="global-hero" class="relative bg-brand-navy min-h-[50vh] md:min-h-[60vh] flex items-center overflow-hidden">
                 <div id="hero-image-container" class="absolute inset-0 z-0">
@@ -245,22 +259,123 @@
             </section>
         </div>
 
-        <!-- ABOUT US PAGE -->
+        <!-- FLEET MANAGEMENT PAGE (Centered Title, Black Font) -->
+        <div id="fleet" class="page-content">
+            <section class="py-16 md:py-24 px-6 bg-white">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl md:text-5xl font-black text-black uppercase tracking-tighter mb-12 text-center">Fleet Management</h2>
+                    
+                    <div class="mb-16">
+                        <p class="text-lg md:text-xl text-slate-700 leading-relaxed mb-10 max-w-4xl mx-auto text-center">
+                            At SN negotiations we offer fleet management. We know that as a business you may not want this so that is why we made it optional. We offer the following:
+                        </p>
+                        
+                        <div class="grid md:grid-cols-3 gap-8 mb-16">
+                            <div class="fleet-card p-8 rounded-2xl shadow-sm">
+                                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fas fa-network-wired text-xl"></i>
+                                </div>
+                                <h4 class="text-lg font-extrabold text-brand-navy mb-3">Statewide Sourcing</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">We utilize our network to find the exact vehicle specs your business demands, from rugged work trucks to executive transport.</p>
+                            </div>
+                            <div class="fleet-card p-8 rounded-2xl shadow-sm">
+                                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fas fa-tags text-xl"></i>
+                                </div>
+                                <h4 class="text-lg font-extrabold text-brand-navy mb-3">Volume Pricing</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">We negotiate multi-unit deals to ensure your business capital is preserved.</p>
+                            </div>
+                            <div class="fleet-card p-8 rounded-2xl shadow-sm">
+                                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fas fa-sync-alt text-xl"></i>
+                                </div>
+                                <h4 class="text-lg font-extrabold text-brand-navy mb-3">Asset Lifecycle Management</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">We help you determine the optimal time to trade or sell, maximizing the return on your aging assets.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-8 md:p-12 rounded-[2rem] border border-slate-100 mb-16 text-center">
+                            <p class="text-lg md:text-xl text-slate-700 leading-relaxed mb-10 italic font-medium">
+                                It didn’t seem fair to us that only big businesses should get fleet management. That is why we offer Individual Warranty tracking and Maintenance Oversight.
+                            </p>
+
+                            <div class="grid md:grid-cols-3 gap-8 text-left">
+                                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition-colors">
+                                    <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-clipboard-check"></i></div>
+                                    <h4 class="text-lg font-extrabold text-brand-navy mb-3">Warranty Tracking</h4>
+                                    <p class="text-slate-600 text-sm leading-relaxed">We keep a proactive eye on your coverage windows.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition-colors">
+                                    <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-file-invoice-dollar"></i></div>
+                                    <h4 class="text-lg font-extrabold text-brand-navy mb-3">Service Estimate Audits</h4>
+                                    <p class="text-slate-600 text-sm leading-relaxed">Before you approve a major repair, we review the dealership's quote to ensure the work is necessary, fairly priced, and not already covered by your existing warranty.</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition-colors">
+                                    <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-user-shield"></i></div>
+                                    <h4 class="text-lg font-extrabold text-brand-navy mb-3">Advocacy in the Service Bay</h4>
+                                    <p class="text-slate-600 text-sm leading-relaxed">If a dealership denies a legitimate claim, we step in as your professional representative to fight for the coverage you are legally owed.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Professional Pricing Chart -->
+                        <div>
+                            <div class="bg-white border border-slate-200 rounded-[2rem] overflow-hidden shadow-sm">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-left border-collapse min-w-[700px]">
+                                        <thead>
+                                            <tr class="border-b border-slate-200 bg-slate-50/50">
+                                                <th class="py-6 pl-8 pr-6 text-sm font-bold text-slate-800">Plan Type</th>
+                                                <th class="px-6 py-6 text-sm font-bold text-slate-800">Monthly Rate</th>
+                                                <th class="px-6 py-6 text-sm font-bold text-slate-800">Annual Rate<br><span class="font-bold text-xs">(Discounted)</span></th>
+                                                <th class="py-6 pr-8 pl-6 text-sm font-bold text-slate-800">Total Yearly Saving</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-100">
+                                            <tr class="hover:bg-slate-50 transition-colors">
+                                                <td class="py-6 pl-8 pr-6 text-base font-bold text-brand-navy">Individual Advocacy</td>
+                                                <td class="px-6 py-6 text-base font-bold text-slate-800">$50 / mo</td>
+                                                <td class="px-6 py-6 text-base font-bold text-slate-800">$500 / year</td>
+                                                <td class="py-6 pr-8 pl-6 text-base font-bold text-slate-800">Save $100</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 transition-colors">
+                                                <td class="py-6 pl-8 pr-6 text-base font-bold text-brand-navy">Small Fleet</td>
+                                                <td class="px-6 py-6 text-base font-bold text-slate-800">$300 / mo</td>
+                                                <td class="px-6 py-6 text-base font-bold text-slate-800">$3,000 / year</td>
+                                                <td class="py-6 pr-8 pl-6 text-base font-bold text-slate-800">Save $600</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 transition-colors">
+                                                <td class="py-6 pl-8 pr-6 text-base font-bold text-brand-navy">Enterprise Fleet</td>
+                                                <td class="px-6 py-6 text-base font-bold text-slate-800">$800 / mo</td>
+                                                <td class="px-6 py-6 text-base font-bold text-slate-800">$8,000 / year</td>
+                                                <td class="py-6 pr-8 pl-6 text-base font-bold text-slate-800">Save $1,600</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ABOUT US PAGE (Centered Title, Black Font) -->
         <div id="about" class="page-content">
             <section class="py-16 md:py-24 px-6 bg-white">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl md:text-5xl font-black text-brand-navy uppercase tracking-tighter mb-12">About Our Firm</h2>
-                    <div class="section-accent mb-12">
-                        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-navy uppercase tracking-tighter leading-tight mb-8">Your Advantage in a <span class="text-blue-600">Tough Market.</span></h3>
-                        <div class="space-y-8 text-slate-700 text-lg md:text-xl leading-relaxed">
+                    <h2 class="text-3xl md:text-5xl font-black text-black uppercase tracking-tighter mb-12 text-center">About Our Firm</h2>
+                    <div class="mb-12">
+                        <h3 class="text-3xl md:text-4xl font-extrabold text-black uppercase tracking-tighter leading-tight mb-8 text-center">Your Advantage in a Tough Market.</h3>
+                        <div class="space-y-8 text-slate-700 text-lg md:text-xl leading-relaxed text-center">
                             <p>At SN Negotiations, our goal is to save you time, reduce stress, and give you the advantage during the car-buying process. We understand that dealerships often rely on pressure tactics to push customers into rushed or costly decisions, and that’s where we step in.</p>
-                            <p class="font-bold border-l-4 border-slate-200 pl-6 italic text-slate-500">Sales teams are trained to wear buyers down until they overpay, but we don’t let that happen. At SN Negotiations, we handle the back-and-forth, push through the hassle, and stay firm until we secure the deal you deserve.</p>
+                            <p class="font-bold border-t border-b border-slate-100 py-6 italic text-slate-500">Sales teams are trained to wear buyers down until they overpay, but we don’t let that happen. At SN Negotiations, we handle the back-and-forth, push through the hassle, and stay firm until we secure the deal you deserve.</p>
                             <p>If one dealership won’t work with us, we move on and negotiate just as aggressively with the next. We make sure every customer gets the satisfaction they’re looking for without wasting hours on emails, phone calls, or frustrating conversations.</p>
                         </div>
                     </div>
                     
                     <div class="mt-16 text-center bg-slate-50 p-12 rounded-3xl border border-slate-100">
-                        <h4 class="text-xl font-bold text-brand-navy uppercase mb-6">Experience the Difference</h4>
+                        <h4 class="text-xl font-bold text-black uppercase mb-6">Experience the Difference</h4>
                         <button onclick="navigateTo('contact')" class="bg-blue-600 text-white px-10 py-5 font-bold hover:bg-blue-700 transition uppercase tracking-widest text-sm shadow-xl">
                             Visit our Contact Us page
                         </button>
@@ -270,24 +385,24 @@
             </section>
         </div>
 
-        <!-- HOW IT WORKS PAGE -->
+        <!-- HOW IT WORKS PAGE (Centered Title, Black Font) -->
         <div id="how-it-works" class="page-content">
             <section class="py-16 md:py-24 px-6 bg-white">
                 <div class="max-w-6xl mx-auto">
-                    <h2 class="text-3xl md:text-5xl font-black text-brand-navy uppercase tracking-tighter mb-16 text-center">The Tactical <span class="text-blue-600">Process</span></h2>
+                    <h2 class="text-3xl md:text-5xl font-black text-black uppercase tracking-tighter mb-16 text-center">The Tactical Process</h2>
                     <div class="grid lg:grid-cols-3 gap-12 mb-24">
-                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                            <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold mb-6 italic">01</div>
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 text-center">
+                            <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold mb-6 italic mx-auto">01</div>
                             <h4 class="text-xl font-bold text-brand-navy mb-4 uppercase tracking-tighter">Engagement</h4>
                             <p class="text-slate-600 text-sm leading-relaxed">Once you retain our services, we immediately set up a firewall between you and the dealership. We utilize our professional credentials to handle all initial correspondence, ensuring your private contact info stays off dealer marketing lists.</p>
                         </div>
-                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                            <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold mb-6 italic">02</div>
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 text-center">
+                            <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold mb-6 italic mx-auto">02</div>
                             <h4 class="text-xl font-bold text-brand-navy mb-4 uppercase tracking-tighter">Locating</h4>
                             <p class="text-slate-600 text-sm leading-relaxed">We don't just look at local lots. We scan statewide inventory, in-transit units, and dealer networks to find the exact match for your specs. We prioritize units that have been on the lot longer, as they offer the highest leverage.</p>
                         </div>
-                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                            <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold mb-6 italic">03</div>
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 text-center">
+                            <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold mb-6 italic mx-auto">03</div>
                             <h4 class="text-xl font-bold text-brand-navy mb-4 uppercase tracking-tighter">Execution</h4>
                             <p class="text-slate-600 text-sm leading-relaxed">We handle the grueling back-and-forth. We verify the "Out-the-Door" price, audit the trade-in value, and cross-reference financing rates. When the deal is perfect, we send you in only to sign the papers and take delivery.</p>
                         </div>
@@ -295,9 +410,9 @@
                     
                     <div class="space-y-24 md:space-y-40">
                         <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-                            <div class="section-accent">
-                                <span class="text-blue-600 font-bold text-xs tracking-widest uppercase">Deep Dive: Phase 01</span>
-                                <h3 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4 md:mb-6 text-brand-navy uppercase tracking-tighter">The Contact Firewall</h3>
+                            <div>
+                                <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">Deep Dive: Phase 01</span>
+                                <h3 class="text-2xl md:text-3xl font-extrabold mb-4 md:mb-6 text-black uppercase tracking-tighter">The Contact Firewall</h3>
                                 <div class="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed">
                                     <p>Dealerships are built on "lead follow-up." Once they have your phone number, you are a data point in a CRM designed to call you three times a day until you buy or die. <strong>We stop this.</strong></p>
                                     <p>By acting as your professional representative, we vet every offer. If a dealer doesn't have the car or isn't willing to talk numbers over the phone, we discard them immediately so you never hear about it.</p>
@@ -308,9 +423,9 @@
                             </div>
                         </div>
                         <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-                            <div class="md:order-last section-accent">
-                                <span class="text-blue-600 font-bold text-xs tracking-widest uppercase">Deep Dive: Phase 02</span>
-                                <h3 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4 md:mb-6 text-brand-navy uppercase tracking-tighter">The Financial Audit</h3>
+                            <div class="md:order-last">
+                                <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">Deep Dive: Phase 02</span>
+                                <h3 class="text-2xl md:text-3xl font-extrabold mb-4 md:mb-6 text-black uppercase tracking-tighter">The Financial Audit</h3>
                                 <div class="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed">
                                     <p>A dealership makes its most profit in the "F&I" (Finance and Insurance) office. This is where hidden markups, warranties you don't need, and high-interest rate spreads are added.</p>
                                     <p>We secure a written <strong>Buyer's Order</strong> before you leave your house. We audit every line item. If we see a $500 "Admin Fee" or a $2,000 "Appearance Package," we negotiate it off or we walk. We ensure your monthly payment is based on the actual math, not a dealer's "rounded up" estimate.</p>
@@ -325,30 +440,30 @@
             </section>
         </div>
 
-        <!-- BENEFITS (ADVANTAGE) PAGE -->
+        <!-- BENEFITS (ADVANTAGE) PAGE (Centered Title, Black Font) -->
         <div id="benefits" class="page-content">
             <section class="py-16 md:py-24 px-6 bg-slate-50">
                 <div class="max-w-7xl mx-auto">
                     <div class="mb-16 text-center">
-                        <h2 class="text-3xl md:text-5xl font-black text-brand-navy uppercase tracking-tighter">The Professional Advantage</h2>
+                        <h2 class="text-3xl md:text-5xl font-black text-black uppercase tracking-tighter">The Professional Advantage</h2>
                         <p class="text-slate-500 mt-4 max-w-2xl mx-auto italic font-bold">In a game of information asymmetry, we level the playing field.</p>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-20">
-                        <div class="bg-white p-8 md:p-10 border border-slate-200 rounded-2xl shadow-sm flex flex-col">
+                        <div class="bg-white p-8 md:p-10 border border-slate-200 rounded-2xl shadow-sm flex flex-col items-center text-center">
                             <i class="fas fa-user-ninja text-3xl text-blue-600 mb-6 block"></i>
-                            <h3 class="font-extrabold text-lg md:text-xl mb-4 uppercase tracking-tighter">Tactical Buffer</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-6">Dealer sales tactics are designed to trigger emotional responses and forced urgency. By placing us in the middle, those tactics lose all power. We communicate through professional channels where logic and numbers prevail over "only for today" promises.</p>
+                            <h3 class="font-extrabold text-lg md:text-xl mb-4 uppercase tracking-tighter text-black">Tactical Buffer</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Dealer sales tactics are designed to trigger emotional responses and forced urgency. By placing us in the middle, those tactics lose all power. We communicate through professional channels where logic and numbers prevail over "only for today" promises.</p>
                         </div>
-                        <div class="bg-white p-8 md:p-10 border border-slate-200 rounded-2xl shadow-sm flex flex-col">
+                        <div class="bg-white p-8 md:p-10 border border-slate-200 rounded-2xl shadow-sm flex flex-col items-center text-center">
                             <i class="fas fa-shield-alt text-3xl text-blue-600 mb-6 block"></i>
-                            <h3 class="font-extrabold text-lg md:text-xl mb-4 uppercase tracking-tighter">Contract Vigilance</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-6">The "Back Office" is where the most dangerous costs hide. We audit every line item of your Buyer's Order, removing predatory dealer fees, add-on packages, and interest rate markups that can cost thousands over the life of a loan.</p>
+                            <h3 class="font-extrabold text-lg md:text-xl mb-4 uppercase tracking-tighter text-black">Contract Vigilance</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">The "Back Office" is where the most dangerous costs hide. We audit every line item of your Buyer's Order, removing predatory dealer fees, add-on packages, and interest rate markups that can cost thousands over the life of a loan.</p>
                         </div>
-                        <div class="bg-white p-8 md:p-10 border border-slate-200 rounded-2xl shadow-sm flex flex-col">
+                        <div class="bg-white p-8 md:p-10 border border-slate-200 rounded-2xl shadow-sm flex flex-col items-center text-center">
                             <i class="fas fa-hand-holding-usd text-3xl text-blue-600 mb-6 block"></i>
-                            <h3 class="font-extrabold text-lg md:text-xl mb-4 uppercase tracking-tighter">Trade-In Protection</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-6">Dealerships often use your trade-in to "hide" the true cost of the new car. We separate these transactions completely. We secure multiple competitive bids for your current vehicle to ensure you're getting actual market value, not a low-ball "allowance."</p>
+                            <h3 class="font-extrabold text-lg md:text-xl mb-4 uppercase tracking-tighter text-black">Trade-In Protection</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Dealerships often use your trade-in to "hide" the true cost of the new car. We separate these transactions completely. We secure multiple competitive bids for your current vehicle to ensure you're getting actual market value, not a low-ball "allowance."</p>
                         </div>
                     </div>
 
@@ -418,17 +533,18 @@
             </section>
         </div>
 
-        <!-- PRICING PAGE -->
+        <!-- PRICING PAGE (Centered Title, Black Font) -->
         <div id="pricing" class="page-content">
             <section class="py-16 md:py-24 px-6 bg-slate-50">
-                <div class="max-w-5_l mx-auto">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="text-3xl md:text-5xl font-black text-black uppercase tracking-tighter mb-16 text-center">The Representation Fee</h2>
                     <div class="bg-white border border-slate-200 p-8 md:p-20 rounded-3xl shadow-xl text-center mb-16">
                         <div class="text-6xl sm:text-8xl md:text-9xl font-black mb-2 text-brand-navy">$500</div>
                         <div class="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-blue-600 mb-8 md:mb-12 italic">The "Unbiased" Flat Engagement Fee</div>
                         
                         <div class="grid md:grid-cols-2 gap-12 text-left">
                             <div class="space-y-6">
-                                <h4 class="font-black uppercase tracking-tighter text-xl text-brand-navy border-b-2 border-blue-500 inline-block pb-1">Included Services</h4>
+                                <h4 class="font-black uppercase tracking-tighter text-xl text-black border-b-2 border-blue-500 inline-block pb-1">Included Services</h4>
                                 <ul class="space-y-4 text-slate-600 text-sm">
                                     <li class="flex items-start gap-3">
                                         <i class="fas fa-check-circle text-blue-500 mt-1 text-lg"></i>
@@ -449,7 +565,7 @@
                                 </ul>
                             </div>
                             <div class="space-y-6">
-                                <h4 class="font-black uppercase tracking-tighter text-xl text-brand-navy border-b-2 border-blue-500 inline-block pb-1">Our Loyalty Policy</h4>
+                                <h4 class="font-black uppercase tracking-tighter text-xl text-black border-b-2 border-blue-500 inline-block pb-1">Our Loyalty Policy</h4>
                                 <p class="text-slate-600 text-sm leading-relaxed">
                                     Typical brokers take a "kickback" or "bird-dog fee" from the dealership. This means they are actually incentivized to help the dealer sell a specific car.
                                 </p>
@@ -463,103 +579,158 @@
             </section>
         </div>
 
-        <!-- CONTACT PAGE -->
+        <!-- CONTACT PAGE (Centered Title, Black Font) -->
         <div id="contact" class="page-content">
             <section class="py-16 md:py-24 px-6 bg-white">
-                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start text-left">
-                    <div class="space-y-8">
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-navy uppercase tracking-tighter leading-tight">Professional <br><span class="text-blue-600">Representation.</span></h2>
-                        <div class="space-y-6">
-                            <p class="text-base md:text-xl text-slate-600 leading-relaxed font-light">
-                                Submit your inquiry below. We serve the entire state of Colorado and handle all vehicle types from commuter cars to luxury SUVs.
-                            </p>
-                            <div class="p-8 bg-slate-50 border-l-4 border-blue-600 rounded-r-2xl shadow-sm">
-                                <p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Direct Consultation Line</p>
-                                <a href="tel:9708173057" class="text-3xl font-black text-brand-navy hover:text-blue-600 transition-colors block mb-1">970-817-3057</a>
-                                <p class="text-sm font-bold text-blue-600 uppercase tracking-tight italic">Serving the Entire State of Colorado</p>
+                <div class="max-w-7xl mx-auto">
+                    <h2 class="text-3xl md:text-5xl font-black text-black uppercase tracking-tighter mb-16 text-center">Get Represented</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start text-left">
+                        <div class="space-y-8 lg:sticky lg:top-32">
+                            <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-black uppercase tracking-tighter leading-tight">Professional <br><span class="text-blue-600">Representation.</span></h3>
+                            <div class="space-y-6">
+                                <p class="text-base md:text-xl text-slate-600 leading-relaxed font-light">
+                                    Submit your inquiry below. We serve the entire state of Colorado and handle all vehicle types from commuter cars to luxury SUVs.
+                                </p>
+                                <div class="p-8 bg-slate-50 border-l-4 border-blue-600 rounded-r-2xl shadow-sm">
+                                    <p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Direct Consultation Line</p>
+                                    <a href="tel:9708173057" class="text-3xl font-black text-brand-navy hover:text-blue-600 transition-colors block mb-1">970-817-3057</a>
+                                    <p class="text-sm font-bold text-blue-600 uppercase tracking-tight italic">Serving the Entire State of Colorado</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="bg-brand-navy p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-slate-800">
-                        <form id="inquiry-form" onsubmit="handleInquiry(event)" class="space-y-5">
-                            <div class="space-y-2 text-white">
-                                <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Full Name</label>
-                                <input required type="text" name="fullName" placeholder="John Doe" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
-                            </div>
-                            
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                <div class="space-y-2">
-                                    <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Email Address</label>
-                                    <input required type="email" name="email" placeholder="john@example.com" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Phone Number</label>
-                                    <input required type="tel" name="phone" placeholder="970-555-0123" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
-                                </div>
-                            </div>
-                            
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-                                <div class="space-y-2 relative">
-                                    <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Preferred Brand</label>
-                                    <div class="relative group">
-                                        <select name="brand" id="brand-select" onchange="toggleOtherBrand(this.value)" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium appearance-none cursor-pointer">
-                                            <option value="" disabled selected>Select a Brand</option>
-                                            <option value="toyota">Toyota</option>
-                                            <option value="honda">Honda</option>
-                                            <option value="ford">Ford</option>
-                                            <option value="chevrolet">Chevrolet</option>
-                                            <option value="subaru">Subaru</option>
-                                            <option value="jeep">Jeep / RAM</option>
-                                            <option value="bmw">BMW</option>
-                                            <option value="mercedes">Mercedes-Benz</option>
-                                            <option value="audi">Audi</option>
-                                            <option value="lexus">Lexus</option>
-                                            <option value="tesla">Tesla</option>
-                                            <option value="other">Other Brand</option>
-                                        </select>
-                                        <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-400 transition-transform group-hover:scale-110">
-                                            <i class="fas fa-chevron-down text-xs"></i>
+                        
+                        <div class="space-y-12">
+                            <!-- FORM 1: Individual Vehicle Inquiry -->
+                            <div class="bg-brand-navy p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-slate-800">
+                                <h3 class="text-xl font-bold text-white uppercase tracking-widest mb-8 border-b border-blue-500/30 pb-4 flex items-center gap-3">
+                                    <i class="fas fa-car text-blue-400"></i> Individual Vehicle Inquiry
+                                </h3>
+                                <form id="inquiry-form" onsubmit="handleInquiry(event)" class="space-y-5">
+                                    <div class="space-y-2 text-white">
+                                        <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Full Name</label>
+                                        <input required type="text" name="fullName" placeholder="John Doe" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                        <div class="space-y-2">
+                                            <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Email Address</label>
+                                            <input required type="email" name="email" placeholder="john@example.com" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Phone Number</label>
+                                            <input required type="tel" name="phone" placeholder="970-555-0123" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Vehicle Model</label>
-                                    <input required type="text" name="vehicle" placeholder="e.g. 2024 RAV4 Hybrid" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
-                                </div>
-                            </div>
-                            
-                            <!-- NEW FIELDS: Color and Timeline -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-                                <div class="space-y-2 text-white">
-                                    <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Preferred Color</label>
-                                    <input type="text" name="color" placeholder="e.g. Black, White, etc." class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
-                                </div>
-                                <div class="space-y-2 relative text-white">
-                                    <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Purchase Timeline</label>
-                                    <div class="relative group">
-                                        <input type="date" name="timeline" required class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium appearance-none cursor-pointer date-picker-custom">
-                                        <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-400 transition-transform group-hover:scale-110">
-                                            <i class="fas fa-calendar-alt text-sm"></i>
+                                    
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+                                        <div class="space-y-2 relative">
+                                            <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Preferred Brand</label>
+                                            <div class="relative group">
+                                                <select name="brand" id="brand-select" onchange="toggleOtherBrand(this.value)" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium appearance-none cursor-pointer">
+                                                    <option value="" disabled selected>Select a Brand</option>
+                                                    <option value="toyota">Toyota</option>
+                                                    <option value="honda">Honda</option>
+                                                    <option value="ford">Ford</option>
+                                                    <option value="chevrolet">Chevrolet</option>
+                                                    <option value="subaru">Subaru</option>
+                                                    <option value="jeep">Jeep / RAM</option>
+                                                    <option value="bmw">BMW</option>
+                                                    <option value="mercedes">Mercedes-Benz</option>
+                                                    <option value="audi">Audi</option>
+                                                    <option value="lexus">Lexus</option>
+                                                    <option value="tesla">Tesla</option>
+                                                    <option value="other">Other Brand</option>
+                                                </select>
+                                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-400 transition-transform group-hover:scale-110">
+                                                    <i class="fas fa-chevron-down text-xs"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Vehicle Model</label>
+                                            <input required type="text" name="vehicle" placeholder="e.g. 2024 RAV4 Hybrid" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
                                         </div>
                                     </div>
-                                </div>
+                                    
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+                                        <div class="space-y-2 text-white">
+                                            <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Preferred Color</label>
+                                            <input type="text" name="color" placeholder="e.g. Black, White, etc." class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
+                                        </div>
+                                        <div class="space-y-2 relative text-white">
+                                            <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Purchase Timeline</label>
+                                            <div class="relative group">
+                                                <input type="date" name="timeline" required class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium appearance-none cursor-pointer date-picker-custom">
+                                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-400 transition-transform group-hover:scale-110">
+                                                    <i class="fas fa-calendar-alt text-sm"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="other-brand-container" class="space-y-2">
+                                        <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Specify Brand</label>
+                                        <input type="text" id="other-brand-input" name="otherBrand" placeholder="Enter Brand Name" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Inquiry Details</label>
+                                        <textarea name="comments" placeholder="Tell us what you're looking for (trim level, trade-in info, etc.)" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium h-28 resize-none"></textarea>
+                                    </div>
+                                    <button type="submit" class="w-full bg-blue-600 text-white px-8 py-4 mt-4 font-extrabold hover:bg-blue-500 transition-all rounded-xl shadow-lg uppercase tracking-[0.2em] text-xs">
+                                        Submit Inquiry
+                                    </button>
+                                </form>
                             </div>
 
-                            <!-- Dynamic Other Brand Input -->
-                            <div id="other-brand-container" class="space-y-2">
-                                <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Specify Brand</label>
-                                <input type="text" id="other-brand-input" name="otherBrand" placeholder="Enter Brand Name" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
-                            </div>
+                            <!-- FORM 2: Fleet Management Inquiry -->
+                            <div class="bg-brand-navy p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-slate-800">
+                                <h3 class="text-xl font-bold text-white uppercase tracking-widest mb-8 border-b border-blue-500/30 pb-4 flex items-center gap-3">
+                                    <i class="fas fa-briefcase text-blue-400"></i> Fleet & Asset Management Inquiry
+                                </h3>
+                                <form id="fleet-inquiry-form" onsubmit="handleInquiry(event)" class="space-y-5">
+                                    <div class="space-y-2 text-white">
+                                        <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Contact Name</label>
+                                        <input required type="text" name="fleetName" placeholder="Full Name or Business Name" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                        <div class="space-y-2">
+                                            <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Email Address</label>
+                                            <input required type="email" name="fleetEmail" placeholder="business@example.com" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Phone Number</label>
+                                            <input required type="tel" name="fleetPhone" placeholder="970-555-0123" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium">
+                                        </div>
+                                    </div>
 
-                            <div class="space-y-2">
-                                <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Inquiry Details</label>
-                                <textarea name="comments" placeholder="Tell us what you're looking for (trim level, trade-in info, etc.)" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium h-28 resize-none"></textarea>
+                                    <div class="space-y-2 relative">
+                                        <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Type of Management</label>
+                                        <div class="relative group">
+                                            <select required name="managementType" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium appearance-none cursor-pointer">
+                                                <option value="" disabled selected>Select Management Level</option>
+                                                <option value="individual">Individual Advocacy</option>
+                                                <option value="small-fleet">Small Fleet Management</option>
+                                                <option value="enterprise">Enterprise Fleet Management</option>
+                                            </select>
+                                            <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-400 transition-transform group-hover:scale-110">
+                                                <i class="fas fa-chevron-down text-xs"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2 text-white">
+                                        <label class="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Comments & Fleet Details</label>
+                                        <textarea required name="fleetComments" placeholder="Please describe your fleet size, specific needs, or current maintenance challenges." class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium h-32 resize-none"></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="w-full bg-blue-600 text-white px-8 py-4 mt-4 font-extrabold hover:bg-blue-500 transition-all rounded-xl shadow-lg uppercase tracking-[0.2em] text-xs">
+                                        Submit Fleet Inquiry
+                                    </button>
+                                </form>
                             </div>
-                            <button type="submit" class="w-full bg-blue-600 text-white px-8 py-4 mt-4 font-extrabold hover:bg-blue-500 transition-all rounded-xl shadow-lg uppercase tracking-[0.2em] text-xs">
-                                Submit Inquiry
-                            </button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -624,7 +795,9 @@
                 btn.innerText = 'INQUIRY SENT';
                 btn.classList.replace('bg-blue-600', 'bg-green-600');
                 e.target.reset();
-                toggleOtherBrand(''); // Reset other brand field
+                if(document.getElementById('other-brand-container')) {
+                    toggleOtherBrand('');
+                }
                 setTimeout(() => {
                     btn.innerText = originalText;
                     btn.classList.replace('bg-green-600', 'bg-blue-600');
