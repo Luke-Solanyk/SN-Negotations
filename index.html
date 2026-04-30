@@ -134,10 +134,10 @@
     <nav class="bg-white/95 backdrop-blur-md border-b border-slate-100 sticky top-0 z-[100]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-24 items-center">
-                <div class="flex-shrink-0 flex items-center">
-                    <button onclick="navigateTo('home')" class="text-left focus:outline-none flex items-center group">
-                        <!-- Use the high-quality logo image directly -->
-                        <img src="Logo.png" alt="SN Negotiations Logo" class="h-16 md:h-24 w-auto object-contain py-1 transition-transform group-hover:scale-105">
+                <div class="flex-shrink-0 relative w-48 md:w-64 h-full">
+                    <button onclick="navigateTo('home')" class="text-left focus:outline-none group absolute left-0 top-2 md:top-3 z-[110]">
+                        <!-- Logo breaks out of the bounds to appear much larger while keeping nav height exactly the same -->
+                        <img src="Logo.png" alt="SN Negotiations Logo" class="h-24 md:h-36 w-auto object-contain transition-transform group-hover:scale-105 origin-top-left drop-shadow-md">
                     </button>
                 </div>
                 
