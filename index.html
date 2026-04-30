@@ -135,10 +135,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center mr-4 lg:mr-12">
-                    <button onclick="navigateTo('home')" class="text-left focus:outline-none">
-                        <div class="text-lg sm:text-2xl font-extrabold text-brand-navy tracking-tight uppercase whitespace-nowrap">
-                            SN <span class="font-light text-slate-400 italic">Negotiations</span>
-                        </div>
+                    <button onclick="navigateTo('home')" class="text-left focus:outline-none flex items-center group">
+                        <!-- Use the high-quality logo image directly -->
+                        <img src="image_f0a762.png" alt="SN Negotiations Logo" class="h-14 md:h-16 w-auto object-contain py-1 transition-transform group-hover:scale-105" onerror="this.onerror=null; this.src='image_f10231.png';">
                     </button>
                 </div>
                 
@@ -186,7 +185,7 @@
     </div>
 
     <main class="flex-grow">
-        <!-- HOME PAGE (Titles left as is per instructions) -->
+        <!-- HOME PAGE -->
         <div id="home" class="page-content active">
             <header id="global-hero" class="relative bg-brand-navy min-h-[50vh] md:min-h-[60vh] flex items-center overflow-hidden">
                 <div id="hero-image-container" class="absolute inset-0 z-0">
@@ -259,7 +258,7 @@
             </section>
         </div>
 
-        <!-- FLEET MANAGEMENT PAGE (Centered Title, Black Font) -->
+        <!-- FLEET MANAGEMENT PAGE -->
         <div id="fleet" class="page-content">
             <section class="py-16 md:py-24 px-6 bg-white">
                 <div class="max-w-6xl mx-auto">
@@ -296,7 +295,7 @@
 
                         <div class="bg-slate-50 p-8 md:p-12 rounded-[2rem] border border-slate-100 mb-16 text-center">
                             <p class="text-lg md:text-xl text-slate-700 leading-relaxed mb-10 italic font-medium">
-                                It didn’t seem fair to us that only big businesses should get fleet management. That is why we offer Individual Warranty tracking and Maintenance Oversight.
+                                It didn’t seem fair to us that only big businesses should get fleet management. That is why we offer Personal management including Warranty tracking and Maintenance Oversight.
                             </p>
 
                             <div class="grid md:grid-cols-3 gap-8 text-left">
@@ -326,6 +325,7 @@
                                         <thead>
                                             <tr class="border-b border-slate-200 bg-slate-50/50">
                                                 <th class="py-6 pl-8 pr-6 text-sm font-bold text-slate-800">Plan Type</th>
+                                                <th class="px-6 py-6 text-sm font-bold text-slate-800">Vehicle Count</th>
                                                 <th class="px-6 py-6 text-sm font-bold text-slate-800">Monthly Rate</th>
                                                 <th class="px-6 py-6 text-sm font-bold text-slate-800">Annual Rate<br><span class="font-bold text-xs">(Discounted)</span></th>
                                                 <th class="py-6 pr-8 pl-6 text-sm font-bold text-slate-800">Total Yearly Saving</th>
@@ -334,18 +334,21 @@
                                         <tbody class="divide-y divide-slate-100">
                                             <tr class="hover:bg-slate-50 transition-colors">
                                                 <td class="py-6 pl-8 pr-6 text-base font-bold text-brand-navy">Individual Advocacy</td>
+                                                <td class="px-6 py-6 text-sm font-bold text-blue-600 italic">1 - 3 Cars</td>
                                                 <td class="px-6 py-6 text-base font-bold text-slate-800">$50 / mo</td>
                                                 <td class="px-6 py-6 text-base font-bold text-slate-800">$500 / year</td>
                                                 <td class="py-6 pr-8 pl-6 text-base font-bold text-slate-800">Save $100</td>
                                             </tr>
                                             <tr class="hover:bg-slate-50 transition-colors">
-                                                <td class="py-6 pl-8 pr-6 text-base font-bold text-brand-navy">Small Fleet</td>
+                                                <td class="py-6 pl-8 pr-6 text-base font-bold text-brand-navy">Small Fleet <span class="text-[9px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded ml-2 uppercase">Business Only</span></td>
+                                                <td class="px-6 py-6 text-sm font-bold text-blue-600 italic">1 - 4 Cars</td>
                                                 <td class="px-6 py-6 text-base font-bold text-slate-800">$300 / mo</td>
                                                 <td class="px-6 py-6 text-base font-bold text-slate-800">$3,000 / year</td>
                                                 <td class="py-6 pr-8 pl-6 text-base font-bold text-slate-800">Save $600</td>
                                             </tr>
                                             <tr class="hover:bg-slate-50 transition-colors">
-                                                <td class="py-6 pl-8 pr-6 text-base font-bold text-brand-navy">Enterprise Fleet</td>
+                                                <td class="py-6 pl-8 pr-6 text-base font-bold text-brand-navy">Enterprise Fleet <span class="text-[9px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded ml-2 uppercase">Business Only</span></td>
+                                                <td class="px-6 py-6 text-sm font-bold text-blue-600 italic">5 - 10+ Cars</td>
                                                 <td class="px-6 py-6 text-base font-bold text-slate-800">$800 / mo</td>
                                                 <td class="px-6 py-6 text-base font-bold text-slate-800">$8,000 / year</td>
                                                 <td class="py-6 pr-8 pl-6 text-base font-bold text-slate-800">Save $1,600</td>
@@ -360,7 +363,7 @@
             </section>
         </div>
 
-        <!-- ABOUT US PAGE (Centered Title, Black Font) -->
+        <!-- ABOUT US PAGE -->
         <div id="about" class="page-content">
             <section class="py-16 md:py-24 px-6 bg-white">
                 <div class="max-w-4xl mx-auto">
@@ -385,7 +388,7 @@
             </section>
         </div>
 
-        <!-- HOW IT WORKS PAGE (Centered Title, Black Font) -->
+        <!-- HOW IT WORKS PAGE -->
         <div id="how-it-works" class="page-content">
             <section class="py-16 md:py-24 px-6 bg-white">
                 <div class="max-w-6xl mx-auto">
@@ -440,7 +443,7 @@
             </section>
         </div>
 
-        <!-- BENEFITS (ADVANTAGE) PAGE (Centered Title, Black Font) -->
+        <!-- BENEFITS (ADVANTAGE) PAGE -->
         <div id="benefits" class="page-content">
             <section class="py-16 md:py-24 px-6 bg-slate-50">
                 <div class="max-w-7xl mx-auto">
@@ -533,7 +536,7 @@
             </section>
         </div>
 
-        <!-- PRICING PAGE (Centered Title, Black Font) -->
+        <!-- PRICING PAGE -->
         <div id="pricing" class="page-content">
             <section class="py-16 md:py-24 px-6 bg-slate-50">
                 <div class="max-w-5xl mx-auto">
@@ -575,11 +578,51 @@
                             </div>
                         </div>
                     </div>
+
+                    <h3 class="text-2xl md:text-4xl font-black text-black uppercase tracking-tighter mb-8 text-center mt-20">Fleet & Personal Management Rates</h3>
+                    <div class="bg-white border border-slate-200 rounded-[2rem] overflow-hidden shadow-xl">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse min-w-[700px]">
+                                <thead>
+                                    <tr class="border-b border-slate-200 bg-slate-50/50">
+                                        <th class="py-6 pl-8 pr-6 text-sm font-bold text-slate-800 uppercase tracking-wider">Plan Type</th>
+                                        <th class="px-6 py-6 text-sm font-bold text-slate-800 uppercase tracking-wider">Vehicle Count</th>
+                                        <th class="px-6 py-6 text-sm font-bold text-slate-800 uppercase tracking-wider">Monthly Rate</th>
+                                        <th class="px-6 py-6 text-sm font-bold text-slate-800 uppercase tracking-wider">Annual Rate<br><span class="font-bold text-xs">(Discounted)</span></th>
+                                        <th class="py-6 pr-8 pl-6 text-sm font-bold text-slate-800 text-right uppercase tracking-wider">Benefit</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="py-6 pl-8 pr-6 text-base font-bold text-brand-navy">Individual Advocacy</td>
+                                        <td class="px-6 py-6 text-sm font-bold text-blue-600 italic">1 - 3 Cars</td>
+                                        <td class="px-6 py-6 text-base font-bold text-slate-800">$50 / mo</td>
+                                        <td class="px-6 py-6 text-base font-bold text-slate-800">$500 / year</td>
+                                        <td class="py-6 pr-8 pl-6 text-base font-bold text-green-600 text-right">Save $100</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="py-6 pl-8 pr-6 text-base font-bold text-brand-navy">Small Fleet <span class="text-[9px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded ml-2 uppercase">Business Only</span></td>
+                                        <td class="px-6 py-6 text-sm font-bold text-blue-600 italic">1 - 4 Cars</td>
+                                        <td class="px-6 py-6 text-base font-bold text-slate-800">$300 / mo</td>
+                                        <td class="px-6 py-6 text-base font-bold text-slate-800">$3,000 / year</td>
+                                        <td class="py-6 pr-8 pl-6 text-base font-bold text-green-600 text-right">Save $600</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 transition-colors">
+                                        <td class="py-6 pl-8 pr-6 text-base font-bold text-brand-navy">Enterprise Fleet <span class="text-[9px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded ml-2 uppercase">Business Only</span></td>
+                                        <td class="px-6 py-6 text-sm font-bold text-blue-600 italic">5 - 10+ Cars</td>
+                                        <td class="px-6 py-6 text-base font-bold text-slate-800">$800 / mo</td>
+                                        <td class="px-6 py-6 text-base font-bold text-slate-800">$8,000 / year</td>
+                                        <td class="py-6 pr-8 pl-6 text-base font-bold text-green-600 text-right">Save $1,600</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
 
-        <!-- CONTACT PAGE (Centered Title, Black Font) -->
+        <!-- CONTACT PAGE -->
         <div id="contact" class="page-content">
             <section class="py-16 md:py-24 px-6 bg-white">
                 <div class="max-w-7xl mx-auto">
@@ -710,9 +753,9 @@
                                         <div class="relative group">
                                             <select required name="managementType" class="w-full rounded-xl px-4 py-3.5 text-sm font-semibold form-input-premium appearance-none cursor-pointer">
                                                 <option value="" disabled selected>Select Management Level</option>
-                                                <option value="individual">Individual Advocacy</option>
-                                                <option value="small-fleet">Small Fleet Management</option>
-                                                <option value="enterprise">Enterprise Fleet Management</option>
+                                                <option value="personal">Individual Advocacy (1-3 Cars)</option>
+                                                <option value="small-fleet">Small Fleet Management (1-4 Cars - Business Only)</option>
+                                                <option value="enterprise">Enterprise Fleet Management (5-10+ Cars - Business Only)</option>
                                             </select>
                                             <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-400 transition-transform group-hover:scale-110">
                                                 <i class="fas fa-chevron-down text-xs"></i>
@@ -742,7 +785,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center md:items-start w-full text-center md:text-left gap-8 md:gap-0 mb-12">
                 <div>
                     <button onclick="navigateTo('home')" class="text-left focus:outline-none">
-                        <div class="text-2xl md:text-3xl font-black text-brand-navy mb-4 tracking-tighter uppercase">SN Negotiations</div>
+                        <img src="image_f0a762.png" alt="SN Negotiations Logo" class="h-14 w-auto object-contain mb-4" onerror="this.onerror=null; this.src='image_f10231.png';">
                     </button>
                     <p class="text-slate-400 text-[10px] uppercase tracking-widest font-bold">Statewide Reach • Zero Hassle</p>
                 </div>
@@ -751,7 +794,6 @@
                 </div>
             </div>
             
-            <!-- Dynamic Copyright Section -->
             <div class="w-full pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-[10px] md:text-xs text-slate-400 font-medium uppercase tracking-widest">
                     &copy; <span id="copyright-year"></span> SN Negotiations LLC. All Rights Reserved.
@@ -817,7 +859,6 @@
         }
 
         window.onload = function() {
-            // Set dynamic year
             document.getElementById('copyright-year').textContent = new Date().getFullYear();
             navigateTo('home');
         };
