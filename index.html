@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SN Negotiations | Professional Automotive Consulting</title>
-    <!-- Updated Favicon Links -->
+    <!-- Updated Favicon Links for Safari Compatibility -->
     <link rel="icon" type="image/png" href="SimpleLogo.png">
-    <link rel="apple-touch-icon" href="SimpleLogo.png">
+    <link rel="shortcut icon" href="SimpleLogo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="SimpleLogo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -370,7 +371,7 @@
                                                 <th class="px-6 py-6 text-sm font-bold text-white">Vehicle Count</th>
                                                 <th class="px-6 py-6 text-sm font-bold text-white">Monthly Rate</th>
                                                 <th class="px-6 py-6 text-sm font-bold text-white">Annual Rate<br><span class="font-bold text-xs text-blue-400">(Discounted)</span></th>
-                                                <th class="py-6 pr-8 pl-6 text-sm font-bold text-white">Total Yearly Saving</th>
+                                                <th class="py-6 pr-8 pl-6 text-sm font-bold text-white">Annual Rate Benefit</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-slate-800">
@@ -702,7 +703,7 @@
                                         <th class="px-6 py-6 text-sm font-bold text-white uppercase tracking-wider">Vehicle Count</th>
                                         <th class="px-6 py-6 text-sm font-bold text-white uppercase tracking-wider">Monthly Rate</th>
                                         <th class="px-6 py-6 text-sm font-bold text-white uppercase tracking-wider">Annual Rate<br><span class="font-bold text-xs text-blue-400">(Discounted)</span></th>
-                                        <th class="py-6 pr-8 pl-6 text-sm font-bold text-white text-right uppercase tracking-wider">Benefit</th>
+                                        <th class="py-6 pr-8 pl-6 text-sm font-bold text-white text-right uppercase tracking-wider">Annual Rate Benefit</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-slate-800">
@@ -997,19 +998,39 @@
             });
         }
 
-        function navigateTo(pageId) {
+        function navigateTo(pageId, updateUrl = true) {
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(page => page.classList.remove('active'));
             
-            const selectedPage = document.getElementById(pageId);
-            if (selectedPage) selectedPage.classList.add('active');
+            // Fallback to home if the requested page doesn't exist
+            const selectedPage = document.getElementById(pageId) || document.getElementById('home');
+            selectedPage.classList.add('active');
+
+            if (updateUrl) {
+                // Update the URL in the browser without reloading
+                if (pageId === 'home') {
+                    // Keep the home URL perfectly clean
+                    history.pushState(null, null, window.location.pathname + window.location.search); 
+                } else {
+                    history.pushState(null, null, '#' + pageId);
+                }
+            }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Handle the browser's Back and Forward arrows
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.replace('#', '');
+            navigateTo(hash || 'home', false);
+        });
+
         window.onload = function() {
             document.getElementById('copyright-year').textContent = new Date().getFullYear();
-            navigateTo('home');
+            
+            // Read the URL to open the correct page immediately
+            const initialHash = window.location.hash.replace('#', '');
+            navigateTo(initialHash || 'home', false);
         };
     </script>
 </body>
